@@ -22,12 +22,10 @@ const hundredDaysOfCode = () => {
   return new Promise((resolve, reject) => {
     if (imposterSyndrome) {
         resolve({
-            name: 'You',
             message: 'This is normal. Keep at it!'
         })
     } else if (giveUp) {
         reject({
-            name: 'You',
             message: 'Never give up. Never surrender.'
         })
     } else {
@@ -36,3 +34,6 @@ const hundredDaysOfCode = () => {
   })
 }
 
+hundredDaysOfCode().then((message) => {
+  
+})
