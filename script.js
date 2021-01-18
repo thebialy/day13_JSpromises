@@ -13,3 +13,26 @@ p.then((message) => {
 }).catch((message) => {
   console.log('Hi, I am the catch ' + message)
 })
+
+
+const imposterSyndrome = true
+const giveUp = false
+
+const hundredDaysOfCode = () => {
+  return new Promise((resolve, reject) => {
+    if (imposterSyndrome) {
+        resolve({
+            name: 'You',
+            message: 'This is normal. Keep at it!'
+        })
+    } else if (giveUp) {
+        reject({
+            name: 'You',
+            message: 'Never give up. Never surrender.'
+        })
+    } else {
+        resolve('Yay! You are on your way to becoming the greatest coder ever!')
+    }
+  })
+}
+
