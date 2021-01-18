@@ -15,13 +15,13 @@ p.then((message) => {
 })
 
 
-const imposterSyndrome = true
+const imposterSyndrome = false
 const giveUp = false
 
 const hundredDaysOfCode = () => {
   return new Promise((resolve, reject) => {
     if (imposterSyndrome) {
-        resolve({
+        reject({
             message: 'This is normal. Keep at it!'
         })
     } else if (giveUp) {
@@ -29,11 +29,15 @@ const hundredDaysOfCode = () => {
             message: 'Never give up. Never surrender.'
         })
     } else {
-        resolve('Yay! You are on your way to becoming the greatest coder ever!')
+        resolve({
+            message: 'Yay! You are on your way to becoming the greatest coder ever!'
+        })
     }
   })
 }
 
 hundredDaysOfCode().then((message) => {
-  
+  console.log(message.message)
+}).catch((error) => {
+  console.log(error.message)
 })
